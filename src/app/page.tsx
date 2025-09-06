@@ -1,26 +1,28 @@
+"use client"
 import Image from "next/image";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import { NavbarDemo } from "@/app/features/navbar";
+import Introduction from "./features/introduction";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center h-screen">
+    <main className="min-h-screen">
       <BackgroundRippleEffect />
-      <div className="flex flex-col items-center justify-center h-screen">
-        <NavbarDemo />
-      </div>
-      <div>
-        <h1 className="text-white text-4xl font-bold">Manik's Portfolio</h1>
-      </div>
-      <div className="mt-8">
-        <video
-          src="/cube.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="rounded-lg shadow-lg w-full max-w-3xl"
-        />
+      <NavbarDemo />
+      <div className="flex items-center justify-center min-h-screen px-8">
+        <div className="flex items-center justify-between w-full max-w-6xl">
+          <div className="flex-1">
+            <video
+              src="/cube.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="rounded-lg shadow-lg w-full max-w-xl"
+            />
+          </div>
+          <Introduction/>
+        </div>
       </div>
     </main>
   );
