@@ -1,29 +1,29 @@
 "use client"
-import Image from "next/image";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
+import { SmoothScrollProvider } from "@/components/ui/smooth-scroll";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { NavbarDemo } from "@/app/features/navbar";
 import Introduction from "./features/introduction";
+import About from "./features/About";
+import Skills from "./features/Skills";
+import Projects from "./features/Projects";
+import Contact from "./features/Contact";
+import Footer from "./features/footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <BackgroundRippleEffect />
-      <NavbarDemo />
-      <div className="flex items-center justify-center min-h-screen px-8">
-        <div className="flex items-center justify-between w-full max-w-6xl">
-          <div className="flex-1">
-            <video
-              src="/cube.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="rounded-lg shadow-lg w-full max-w-xl"
-            />
-          </div>
-          <Introduction/>
-        </div>
-      </div>
-    </main>
+    <SmoothScrollProvider>
+      <main className="min-h-screen">
+        <BackgroundRippleEffect />
+        <NavbarDemo />
+        <Introduction/>
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
+        <ScrollToTop />
+      </main>
+    </SmoothScrollProvider>
   );
 }

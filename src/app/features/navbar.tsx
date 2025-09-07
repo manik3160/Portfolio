@@ -19,12 +19,12 @@ export function NavbarDemo() {
       link: "#about",
     },
     {
-      name: "Projects",
-      link: "#projects",
-    },
-     {
       name: "Skills",
       link: "#skill",
+    },
+    {
+      name: "Projects",
+      link: "#projects",
     },
     {
       name: "Contact",
@@ -41,8 +41,18 @@ export function NavbarDemo() {
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
-            <NavbarButton variant="primary">Download CV</NavbarButton>
+          <div className="flex items-center gap-4 relative z-50">
+            <NavbarButton 
+              variant="primary"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/CV.pdf';
+                link.download = 'Manik_CV.pdf';
+                link.click();
+              }}
+            >
+              Download CV
+            </NavbarButton>
           </div>
         </NavBody>
 
@@ -72,18 +82,17 @@ export function NavbarDemo() {
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/CV.pdf';
+                  link.download = 'Manik_CV.pdf';
+                  link.click();
+                  setIsMobileMenuOpen(false);
+                }}
                 variant="primary"
                 className="w-full"
               >
-                Login
-              </NavbarButton>
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Book a call
+                Download CV
               </NavbarButton>
             </div>
           </MobileNavMenu>
