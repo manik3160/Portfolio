@@ -1,22 +1,16 @@
 "use client";
 import { HeroHighlightDemo } from "./Hero";
 import { GridBackground } from "@/components/ui/grid-background";
+import { CodingAnimation } from "@/components/ui/coding-animation";
 
 export default function Introduction() {
   return (
     <GridBackground className="flex items-center justify-center min-h-screen px-8" fadeEffect={false}>
-      <div className="flex items-center justify-between w-full max-w-6xl">
-        <div className="flex-1 max-w-lg">
-          <video
-            src="/cube.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="rounded-lg shadow-lg w-full"
-          />
+      <div className="flex items-center w-full max-w-7xl">
+        <div className="w-2/5">
+          <CodingAnimation />
         </div>
-        <div className="flex-1 ml-8 max-w-lg">
+        <div className="w-3/5 ml-12">
           
           
           <HeroHighlightDemo />

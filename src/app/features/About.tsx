@@ -1,19 +1,54 @@
 "use client";
 import { GridBackground } from "@/components/ui/grid-background";
 import { FadeIn } from "@/components/ui/fade-in";
+import { TypingText } from "@/components/ui/typing-text";
+import { useState, useEffect, useRef } from "react";
 
 export default function About() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setIsVisible(true);
+            setHasAnimated(true);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
   return (
-    <section id="about">
+    <section id="about" ref={sectionRef}>
       <GridBackground className="py-20 px-8" fadeEffect={false}>
       <div className="max-w-6xl mx-auto">
         <FadeIn direction="up">
           <h2 className="text-5xl font-bold text-center mb-12">
-            <span className="text-blue-600 dark:text-blue-400 font-mono">
-              $
-            </span>
-            <span className="text-gray-800 dark:text-white ml-3">
-              About Me
+            <span className="text-gray-800 dark:text-white">
+              {isVisible ? (
+                <TypingText 
+                  text="$ About Me" 
+                  speed={200}
+                  className="font-bold"
+                  coloredText={{
+                    text: "$",
+                    color: "text-blue-600 dark:text-blue-400 font-mono"
+                  }}
+                />
+              ) : (
+                <span className="text-gray-400">$ About Me</span>
+              )}
             </span>
           </h2>
         </FadeIn>

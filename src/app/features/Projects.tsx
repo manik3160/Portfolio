@@ -1,10 +1,34 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { GridBackground } from "@/components/ui/grid-background";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { TypingText } from "@/components/ui/typing-text";
 
 export default function Projects() {
   const [currentCard, setCurrentCard] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setIsVisible(true);
+            setHasAnimated(true);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
 
   const projects = [
     {
@@ -53,15 +77,24 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects">
+    <section id="projects" ref={sectionRef}>
       <GridBackground className="py-20 px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-bold text-center mb-12">
-            <span className="text-blue-600 dark:text-blue-400 font-mono">
-              $
-            </span>
-            <span className="text-gray-800 dark:text-white ml-3">
-              Featured Projects
+            <span className="text-gray-800 dark:text-white">
+              {isVisible ? (
+                <TypingText 
+                  text="$ Featured Projects" 
+                  speed={200}
+                  className="font-bold"
+                  coloredText={{
+                    text: "$",
+                    color: "text-blue-600 dark:text-blue-400 font-mono"
+                  }}
+                />
+              ) : (
+                <span className="text-gray-400">$ Featured Projects</span>
+              )}
             </span>
           </h2>
           
