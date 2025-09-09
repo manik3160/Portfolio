@@ -9,6 +9,7 @@ export default function Contact() {
   const [particles, setParticles] = useState<Array<{id: number, x: number, y: number, vx: number, vy: number}>>([]);
   const [animationTime, setAnimationTime] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [isClient, setIsClient] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,8 +17,15 @@ export default function Contact() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   // Animation loop for continuous orbit
   useEffect(() => {
+    // Only start animation on client side
+    if (typeof window === 'undefined') return;
+    
     const animate = () => {
       setAnimationTime(Date.now());
       requestAnimationFrame(animate);
@@ -27,6 +35,9 @@ export default function Contact() {
 
   // Create floating particles
   useEffect(() => {
+    // Only run on client side to avoid hydration mismatch
+    if (typeof window === 'undefined') return;
+    
     const newParticles = Array.from({ length: 20 }, (_, i) => ({
       id: i,
       x: Math.random() * window.innerWidth,
@@ -93,14 +104,14 @@ export default function Contact() {
     <section id="contact" className="relative overflow-hidden">
       {/* Animated Background Particles */}
       <div className="absolute inset-0 pointer-events-none">
-        {particles.map(particle => (
+        {isClient && particles.map(particle => (
           <div
             key={particle.id}
             className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-pulse"
             style={{
               left: particle.x,
               top: particle.y,
-              transform: `translate(${Math.sin(Date.now() * 0.001 + particle.id) * 10}px, ${Math.cos(Date.now() * 0.001 + particle.id) * 10}px)`
+              transform: `translate(${Math.sin(animationTime * 0.001 + particle.id) * 10}px, ${Math.cos(animationTime * 0.001 + particle.id) * 10}px)`
             }}
           />
         ))}
@@ -142,7 +153,7 @@ export default function Contact() {
               const Icon = social.icon;
               const orbitRadius = 250 - (index * 50); // Different orbits: 250, 200, 150, 100
               const orbitSpeed = 0.3 + (index * 0.15); // Different speeds
-              const angle = (animationTime * 0.0008 * orbitSpeed + index * Math.PI / 2) % (2 * Math.PI);
+              const angle = ((isClient ? animationTime : 0) * 0.0008 * orbitSpeed + index * Math.PI / 2) % (2 * Math.PI);
               const centerX = 0;
               const centerY = 0;
               
@@ -216,7 +227,7 @@ export default function Contact() {
 
             {/* Asteroid Belt */}
             <div className="absolute w-[450px] h-[450px] border border-gray-400/10 rounded-full animate-spin-slow" />
-            {Array.from({ length: 12 }, (_, i) => {
+            {isClient && Array.from({ length: 12 }, (_, i) => {
               const angle = (i * Math.PI / 6 + animationTime * 0.0003) % (2 * Math.PI);
               const x = Math.cos(angle) * 225;
               const y = Math.sin(angle) * 225;
