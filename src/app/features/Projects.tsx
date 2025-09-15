@@ -79,9 +79,9 @@ export default function Projects() {
 
   return (
     <section id="projects">
-      <GridBackground className="py-20 px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-12">
+        <GridBackground className="py-12 sm:py-20 px-4 sm:px-8">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12">
             <span className="text-gray-800 dark:text-white">
               <span className="font-bold">
                 <span className="text-blue-600 dark:text-blue-400 font-mono">$</span> Featured Projects
@@ -94,7 +94,7 @@ export default function Projects() {
             {}
             <button
               onClick={prevCard}
-              className="absolute left-4 z-10 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
+              className="absolute left-2 sm:left-4 z-10 p-2 sm:p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
               aria-label="Previous project"
             >
               <svg
@@ -113,9 +113,9 @@ export default function Projects() {
             </button>
 
             {}
-            <div className="w-full max-w-md mx-4">
+            <div className="w-full max-w-sm sm:max-w-md mx-2 sm:mx-4">
               <CardContainer className="inter-var">
-                <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
+                <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-4 sm:p-6 border">
                   <CardItem
                     translateZ="50"
                     className="mb-4 text-center"
@@ -125,13 +125,13 @@ export default function Projects() {
                       alt={projects[currentCard].title}
                       width={400}
                       height={192}
-                      className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                      className="w-full h-40 sm:h-48 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                     />
                   </CardItem>
                   
                   <CardItem
                     translateZ="60"
-                    className="text-2xl font-bold text-neutral-600 dark:text-white text-center mb-4"
+                    className="text-xl sm:text-2xl font-bold text-neutral-600 dark:text-white text-center mb-4"
                   >
                     {projects[currentCard].title}
                   </CardItem>
@@ -139,17 +139,17 @@ export default function Projects() {
                   <CardItem
                     as="p"
                     translateZ="60"
-                    className="text-neutral-500 text-sm max-w-sm mx-auto text-center mb-6 dark:text-neutral-300"
+                    className="text-neutral-500 text-xs sm:text-sm max-w-sm mx-auto text-center mb-4 sm:mb-6 dark:text-neutral-300"
                   >
                     {projects[currentCard].description}
                   </CardItem>
                   
-                  <CardItem translateZ="100" className="w-full mb-6">
-                    <div className="flex flex-wrap justify-center gap-2">
+                  <CardItem translateZ="100" className="w-full mb-4 sm:mb-6">
+                    <div className="flex flex-wrap justify-center gap-1 sm:gap-2">
                       {projects[currentCard].tech.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm"
+                          className="px-2 sm:px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs sm:text-sm"
                         >
                           {tech}
                         </span>
@@ -157,13 +157,13 @@ export default function Projects() {
                     </div>
                   </CardItem>
                   
-                  <div className="flex justify-center items-center mt-6">
+                  <div className="flex justify-center items-center mt-4 sm:mt-6">
                     <CardItem
                       translateZ={20}
                       as="a"
                       href={projects[currentCard].link}
                       target="_blank"
-                      className="px-6 py-3 rounded-xl text-sm font-normal dark:text-white bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300"
+                      className="px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-xs sm:text-sm font-normal dark:text-white bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300"
                     >
                       View Project →
                     </CardItem>
@@ -175,7 +175,7 @@ export default function Projects() {
             {}
             <button
               onClick={nextCard}
-              className="absolute right-4 z-10 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
+              className="absolute right-2 sm:right-4 z-10 p-2 sm:p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
               aria-label="Next project"
             >
               <svg
@@ -195,7 +195,7 @@ export default function Projects() {
           </div>
 
           {}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
             {projects.map((_, index) => (
               <button
                 key={index}

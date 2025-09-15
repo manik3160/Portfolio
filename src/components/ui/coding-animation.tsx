@@ -53,7 +53,7 @@ export function CodingAnimation() {
         </div>
         
         {/* Screen Content */}
-        <div className="bg-gray-900 p-6 min-h-[450px] relative">
+        <div className="bg-gray-900 p-4 sm:p-6 min-h-[350px] sm:min-h-[450px] relative">
           {/* Terminal Header */}
           <div className="flex items-center justify-between mb-4 pb-2 border-b border-gray-700">
             <div className="flex items-center space-x-2">
@@ -61,12 +61,12 @@ export function CodingAnimation() {
               <div className="w-2 h-2 bg-gray-500 rounded-full" />
               <div className="w-2 h-2 bg-gray-500 rounded-full" />
             </div>
-            <span className="text-gray-400 text-sm font-mono">terminal</span>
+            <span className="text-gray-400 text-xs sm:text-sm font-mono">terminal</span>
             <div className="w-6"></div>
           </div>
 
           {/* Code Display */}
-          <div className="font-mono text-sm relative">
+          <div className="font-mono text-xs sm:text-sm relative">
             <pre className="text-green-400 whitespace-pre-wrap leading-relaxed">
               {displayedText}
               {!isTypingComplete && <span className="animate-pulse">|</span>}
@@ -83,15 +83,15 @@ export function CodingAnimation() {
             <div className="mt-6 p-4 bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-500/40 rounded-lg backdrop-blur-sm animate-fade-in">
               <div className="flex items-center space-x-2 mb-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full" />
-                <span className="text-green-400 text-sm font-mono">
+                <span className="text-green-400 text-xs sm:text-sm font-mono">
                   ✓ Code executed successfully!
                 </span>
               </div>
-              <p className="text-gray-300 text-sm">
-                Hello, I&apos;m <span className="text-blue-400 font-bold text-base">Manik</span>! 
-                <br />
-                Ready to build amazing things together.
-              </p>
+                     <p className="text-gray-300 text-xs sm:text-sm">
+                       Hello, I&apos;m <span className="text-blue-400 font-bold text-sm sm:text-base">Manik</span>! 
+                       <br />
+                       Ready to build amazing things together.
+                     </p>
             </div>
           )}
         </div>

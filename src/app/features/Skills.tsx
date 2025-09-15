@@ -33,10 +33,10 @@ export default function Skills() {
 
   return (
     <section id="skill">
-      <GridBackground className="py-20 px-8" fadeEffect={false}>
+      <GridBackground className="py-12 sm:py-20 px-4 sm:px-8" fadeEffect={false}>
       <div className="max-w-6xl mx-auto">
         <FadeIn direction="up">
-          <h2 className="text-5xl font-bold text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12">
             <span className="text-gray-800 dark:text-white">
               <span className="font-bold">
                 <span className="text-blue-600 dark:text-blue-400 font-mono">$</span> Skills & Technologies
@@ -44,7 +44,7 @@ export default function Skills() {
             </span>
           </h2>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {[
             { 
               name: "React", 
@@ -185,7 +185,7 @@ export default function Skills() {
             return (
             <FadeIn key={index} direction="up" delay={index * 100}>
               <div 
-                className={`${skill.size} h-64 cursor-pointer`}
+                className={`${skill.size} h-56 sm:h-64 cursor-pointer`}
                 onClick={() => toggleFlip(index)}
               >
                 <motion.div
@@ -195,7 +195,7 @@ export default function Skills() {
                   transition={{ duration: 0.6, ease: "easeInOut" }}
                 >
                   {/* Front of card */}
-                  <div className={`absolute inset-0 w-full h-full backface-hidden rounded-2xl ${skill.bgColor} border-2 ${skill.borderColor} p-8 shadow-lg hover:shadow-2xl transition-all duration-500 ${skill.size}`}>
+                  <div className={`absolute inset-0 w-full h-full backface-hidden rounded-2xl ${skill.bgColor} border-2 ${skill.borderColor} p-4 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 ${skill.size}`}>
                     {/* Gradient overlay */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 hover:opacity-10 transition-opacity duration-500 rounded-2xl`}></div>
                     
@@ -206,15 +206,15 @@ export default function Skills() {
                     
                     <div className="relative z-10 text-center space-y-4 h-full flex flex-col justify-center">
                       {/* Icon */}
-                      <div className="flex justify-center mb-4">
+                      <div className="flex justify-center mb-2 sm:mb-4">
                         <IconComponent 
-                          size={48} 
-                          className={`text-gray-700 dark:text-gray-300 hover:scale-110 transition-transform duration-300`}
+                          size={40} 
+                          className={`text-gray-700 dark:text-gray-300 hover:scale-110 transition-transform duration-300 sm:w-12 sm:h-12`}
                         />
                       </div>
                       
                       {/* Skill name */}
-                      <h3 className="text-2xl font-bold text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 transition-colors duration-300">
+                      <h3 className="text-lg sm:text-2xl font-bold text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 transition-colors duration-300">
                         {skill.name}
                       </h3>
                       
@@ -223,7 +223,7 @@ export default function Skills() {
                       
                       {/* Click to flip text - only for React card */}
                       {skill.name === "React" && (
-                        <p className="text-gray-500 dark:text-gray-400">
+                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                           Click to flip
                         </p>
                       )}
@@ -235,23 +235,23 @@ export default function Skills() {
                   </div>
 
                   {/* Back of card */}
-                  <div className={`absolute inset-0 w-full h-full backface-hidden rounded-2xl ${skill.bgColor} border-2 ${skill.borderColor} p-6 shadow-lg hover:shadow-2xl transition-all duration-500 ${skill.size}`} style={{ transform: "rotateY(180deg)" }}>
+                  <div className={`absolute inset-0 w-full h-full backface-hidden rounded-2xl ${skill.bgColor} border-2 ${skill.borderColor} p-4 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-500 ${skill.size}`} style={{ transform: "rotateY(180deg)" }}>
                     {/* Gradient overlay */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-20 rounded-2xl`}></div>
                     
                     <div className="relative z-10 text-center space-y-4 h-full flex flex-col justify-center">
                       {/* Skill name */}
-                      <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white mb-2 sm:mb-3">
                         {skill.name}
                       </h3>
                       
                       {/* Description */}
-                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                      <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-3 sm:mb-4">
                         {skill.description}
                       </p>
                       
                       {/* Experience and Projects */}
-                      <div className="space-y-2">
+                      <div className="space-y-1 sm:space-y-2">
                         <div className="flex justify-between items-center text-xs">
                           <span className="text-gray-500 dark:text-gray-400">Experience:</span>
                           <span className="font-semibold text-gray-700 dark:text-gray-200">{skill.experience}</span>

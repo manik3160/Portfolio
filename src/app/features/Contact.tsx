@@ -109,9 +109,9 @@ export default function Contact() {
         ))}
       </div>
 
-      <GridBackground className="py-20 px-8" fadeEffect={false}>
+      <GridBackground className="py-12 sm:py-20 px-4 sm:px-8" fadeEffect={false}>
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h2 className="text-5xl font-bold mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8">
             <span className="text-gray-800 dark:text-white">
               <span className="font-bold">
                 <span className="text-blue-600 dark:text-blue-400 font-mono">$</span> Let&apos;s Connect
@@ -119,30 +119,30 @@ export default function Contact() {
             </span>
           </h2>
 
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-20 animate-fade-in">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-12 sm:mb-20 animate-fade-in">
             I&apos;m always interested in new opportunities and exciting projects.
           </p>
           
         
 
           {/* Solar System Orbit */}
-          <div className="relative w-full h-[600px] flex items-center justify-center">
+          <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] flex items-center justify-center">
             {/* Central Sun */}
-            <div className="absolute z-10 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full shadow-2xl shadow-yellow-500/50 animate-pulse">
+            <div className="absolute z-10 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full shadow-2xl shadow-yellow-500/50 animate-pulse">
               <div className="absolute inset-2 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full" />
               <div className="absolute inset-4 bg-gradient-to-br from-yellow-200 to-yellow-400 rounded-full" />
             </div>
 
             {/* Orbit Paths */}
-            <div className="absolute w-[500px] h-[500px] border border-blue-300/20 rounded-full animate-spin-slow" />
-            <div className="absolute w-[400px] h-[400px] border border-purple-300/20 rounded-full animate-spin-reverse" />
-            <div className="absolute w-[300px] h-[300px] border border-green-300/20 rounded-full animate-spin-slow" />
-            <div className="absolute w-[200px] h-[200px] border border-pink-300/20 rounded-full animate-spin-reverse" />
+            <div className="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] border border-blue-300/20 rounded-full animate-spin-slow" />
+            <div className="absolute w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] border border-purple-300/20 rounded-full animate-spin-reverse" />
+            <div className="absolute w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] border border-green-300/20 rounded-full animate-spin-slow" />
+            <div className="absolute w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[200px] md:h-[200px] border border-pink-300/20 rounded-full animate-spin-reverse" />
 
             {/* Orbiting Social Cards */}
             {socialLinks.map((social, index) => {
               const Icon = social.icon;
-              const orbitRadius = 250 - (index * 50); // Different orbits: 250, 200, 150, 100
+              const orbitRadius = window.innerWidth < 640 ? 150 - (index * 30) : window.innerWidth < 768 ? 200 - (index * 40) : 250 - (index * 50); // Responsive orbits
               const orbitSpeed = 0.3 + (index * 0.15); // Different speeds
               const angle = ((isClient ? animationTime : 0) * 0.0008 * orbitSpeed + index * Math.PI / 2) % (2 * Math.PI);
               const centerX = 0;
@@ -171,13 +171,13 @@ export default function Contact() {
                 >
                   {/* Planet Card */}
                   <div className={`
-                    relative p-8 rounded-3xl border-2 border-transparent
+                    relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border-2 border-transparent
                     bg-gradient-to-br from-white/20 to-white/10 dark:from-gray-800/60 dark:to-gray-900/60
                     backdrop-blur-md
                     ${hoveredCard === index ? 'backdrop-blur-lg shadow-2xl border-white/30 dark:border-gray-600/50' : ''}
                     ${hoveredCard === index ? `shadow-${social.glowColor}` : ''}
                     transition-all duration-300
-                    w-32 h-32 flex items-center justify-center
+                    w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 flex items-center justify-center
                   `}>
                     {/* Planet Rings */}
                     <div className="absolute -inset-3 rounded-full border border-white/10 animate-pulse" />
@@ -186,15 +186,15 @@ export default function Contact() {
                     {/* Planet Surface */}
                     <div className="flex flex-col items-center space-y-4 relative z-10">
                       <div className={`
-                        p-5 rounded-full bg-gradient-to-br ${social.color} 
+                        p-3 sm:p-4 md:p-5 rounded-full bg-gradient-to-br ${social.color} 
                         shadow-lg
                         ${hoveredCard === index ? 'shadow-2xl scale-110' : ''}
                         transition-all duration-300
                       `}>
-                        <Icon className={`w-8 h-8 text-white ${hoveredCard === index ? 'animate-pulse' : ''}`} />
+                        <Icon className={`w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white ${hoveredCard === index ? 'animate-pulse' : ''}`} />
                       </div>
                       
-                      <span className={`text-sm font-bold transition-colors duration-300 whitespace-nowrap ${
+                      <span className={`text-xs sm:text-sm font-bold transition-colors duration-300 whitespace-nowrap ${
                         hoveredCard === index ? 'text-white' : 'text-gray-700 dark:text-gray-200'
                       }`}>
                         {social.name}

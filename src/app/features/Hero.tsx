@@ -18,12 +18,12 @@ export function HeroHighlightDemo() {
           duration: 0.5,
           ease: [0.4, 0.0, 0.2, 1],
         }}
-        className="text-2xl px-4 md:text-3xl lg:text-4xl font-bold text-neutral-700 dark:text-white max-w-2xl leading-relaxed lg:leading-snug text-center mx-auto hover:scale-105 transition-all duration-300 cursor-pointer"
+        className="text-xl px-4 sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-700 dark:text-white max-w-2xl leading-relaxed lg:leading-snug text-center mx-auto hover:scale-105 transition-all duration-300 cursor-pointer"
       >
         Hi, I&apos;m{" "}
         <Highlight className="text-black dark:text-white">Manik</Highlight>
         <div className="mt-6">
-          <p className="text-gray-300 text-xl md:text-2xl font-bold mb-4 hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer">
+          <p className="text-gray-300 text-lg sm:text-xl md:text-2xl font-bold mb-4 hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer">
             Full Stack Developer & Data Scientist
           </p>
           <p className="text-sm sm:text-base text-gray-300 leading-relaxed hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer w-full overflow-hidden">
@@ -80,7 +80,7 @@ export function HeroHighlightDemo() {
             
               </div>
             
-            <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-1 sm:gap-2 max-w-4xl mx-auto px-2">
               {[
                 { name: "React", color: "hover:bg-blue-500/20 hover:border-blue-400 hover:text-blue-300" },
                 { name: "Next.js", color: "hover:bg-gray-500/20 hover:border-gray-400 hover:text-gray-300" },
@@ -101,7 +101,7 @@ export function HeroHighlightDemo() {
               ].map((tech, index) => (
                 <span
                   key={index}
-                  className={`px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${tech.color}`}
+                  className={`px-2 sm:px-4 py-1 sm:py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 cursor-pointer ${tech.color}`}
                 >
                   {tech.name}
                 </span>
@@ -113,7 +113,7 @@ export function HeroHighlightDemo() {
                   const skillsSection = document.getElementById('skill');
                   skillsSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="px-6 py-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-400/30 text-white rounded-full text-sm font-semibold hover:from-blue-600/30 hover:to-purple-600/30 hover:border-blue-400/50 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 cursor-pointer flex items-center gap-2 group relative overflow-hidden"
+                className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-400/30 text-white rounded-full text-xs sm:text-sm font-semibold hover:from-blue-600/30 hover:to-purple-600/30 hover:border-blue-400/50 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 cursor-pointer flex items-center gap-2 group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10">See More</span>

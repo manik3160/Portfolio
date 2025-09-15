@@ -6,10 +6,10 @@ export default function About() {
 
   return (
     <section id="about">
-      <GridBackground className="py-20 px-8" fadeEffect={false}>
+      <GridBackground className="py-12 sm:py-20 px-4 sm:px-8" fadeEffect={false}>
       <div className="max-w-6xl mx-auto">
         <FadeIn direction="up">
-          <h2 className="text-5xl font-bold text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12">
             <span className="text-gray-800 dark:text-white">
               <span className="font-bold">
                 <span className="text-blue-600 dark:text-blue-400 font-mono">$</span> About Me
@@ -17,10 +17,10 @@ export default function About() {
             </span>
           </h2>
         </FadeIn>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
           <FadeIn direction="left" delay={200}>
-            <div className="flex justify-center">
-              <div className="relative w-80 h-80">
+            <div className="flex justify-center mb-8 md:mb-0">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80">
                 {/* Floating geometric animation */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-32 h-32 border-4 border-blue-500 rounded-lg animate-spin-slow opacity-60"></div>
@@ -43,7 +43,7 @@ export default function About() {
           </FadeIn>
           <FadeIn direction="right" delay={400}>
             <div>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
                 I&apos;m Manik — a full-stack web and data scientist with a strong passion for clean, 
                 scalable code and modern technologies. Alongside building user-focused applications, 
                 I love working with data — analysing and creating visualizations, and transforming 
@@ -51,7 +51,7 @@ export default function About() {
                 how things work under the hood, and continuously leveling up my skills to solve 
                 real-world problems.
               </p>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
                 When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to 
                 open-source projects, or diving deep into data analysis to uncover meaningful insights.
               </p>
