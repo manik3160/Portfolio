@@ -5,19 +5,14 @@ import { CodingAnimation } from "@/components/ui/coding-animation";
 
 export default function Introduction() {
   return (
-    <GridBackground className="flex items-center justify-center min-h-screen px-8" fadeEffect={false}>
-      <div className="flex items-center w-full max-w-7xl">
-        <div className="w-2/5">
+    <GridBackground className="flex items-center justify-center min-h-screen px-4 sm:px-8" fadeEffect={false}>
+      <div className="flex flex-col lg:flex-row items-center w-full max-w-7xl gap-8 lg:gap-12">
+        <div className="w-full lg:w-2/5 order-2 lg:order-1">
           <CodingAnimation />
         </div>
-        <div className="w-3/5 ml-12">
-          
-          
+        <div className="w-full lg:w-3/5 order-1 lg:order-2">
           <HeroHighlightDemo />
-          
-          
         </div>
-        
       </div>
         
       <style jsx>{`

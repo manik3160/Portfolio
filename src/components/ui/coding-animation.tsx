@@ -40,7 +40,7 @@ export function CodingAnimation() {
   }, [currentLineIndex, currentCharIndex, codeLines]);
 
   return (
-    <div className="relative w-full max-w-2xl">
+    <div className="relative w-full max-w-xs sm:max-w-lg md:max-w-2xl">
       {/* Computer Screen */}
       <div className="relative bg-gray-900 rounded-lg shadow-2xl overflow-hidden">
         {/* Screen Bezel */}
