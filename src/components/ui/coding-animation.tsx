@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 export function CodingAnimation() {
   const [displayedText, setDisplayedText] = useState("");
@@ -7,7 +7,7 @@ export function CodingAnimation() {
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const [isTypingComplete, setIsTypingComplete] = useState(false);
 
-  const codeLines = [
+  const codeLines = useMemo(() => [
     "const developer = {",
     "  name: 'Manik',",
     "  skills: ['Webdev', 'DSA', 'Data Science'],",
@@ -15,7 +15,7 @@ export function CodingAnimation() {
     "};",
     "",
     "console.log(`Hello, I'm ${developer.name}!`);",
-  ];
+  ], []);
 
   useEffect(() => {
     const timer = setInterval(() => {

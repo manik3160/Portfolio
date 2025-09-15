@@ -54,7 +54,8 @@ export default function Contact() {
 
   // Mouse tracking for magnetic effect
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = () => {
+      // Mouse tracking logic can be added here if needed
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
@@ -113,7 +114,7 @@ export default function Contact() {
           <h2 className="text-5xl font-bold mb-8">
             <span className="text-gray-800 dark:text-white">
               <span className="font-bold">
-                <span className="text-blue-600 dark:text-blue-400 font-mono">$</span> Let's Connect
+                <span className="text-blue-600 dark:text-blue-400 font-mono">$</span> Let&apos;s Connect
               </span>
             </span>
           </h2>

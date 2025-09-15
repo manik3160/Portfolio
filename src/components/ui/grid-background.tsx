@@ -15,7 +15,7 @@ export function GridBackground({
   gridSize = "40px_40px"
 }: GridBackgroundProps) {
   const gridStyle = {
-    backgroundSize: "40px 40px",
+    backgroundSize: gridSize.replace('_', ' '),
   };
 
   return (

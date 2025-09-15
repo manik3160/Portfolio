@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { GridBackground } from "@/components/ui/grid-background";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
@@ -119,9 +120,11 @@ export default function Projects() {
                     translateZ="50"
                     className="mb-4 text-center"
                   >
-                    <img
+                    <Image
                       src={projects[currentCard].image}
                       alt={projects[currentCard].title}
+                      width={400}
+                      height={192}
                       className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                     />
                   </CardItem>
