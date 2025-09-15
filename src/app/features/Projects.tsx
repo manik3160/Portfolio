@@ -20,7 +20,7 @@ export default function Projects() {
        	"WebContainers",
         	"xterm.js",
         	"MongoDB" ],
-      image: "/vibecode.jpeg",
+      image: "/Vibecode.jpeg",
       link: "https://github.com/manik3160/House-Prediction"
     },
     {
