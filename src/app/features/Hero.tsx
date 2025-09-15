@@ -18,15 +18,15 @@ export function HeroHighlightDemo() {
           duration: 0.5,
           ease: [0.4, 0.0, 0.2, 1],
         }}
-        className="text-lg px-2 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-neutral-700 dark:text-white max-w-2xl leading-relaxed lg:leading-snug text-center mx-auto hover:scale-105 transition-all duration-300 cursor-pointer"
+        className="text-xl px-4 sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white max-w-2xl leading-relaxed lg:leading-snug text-center mx-auto hover:scale-105 transition-all duration-300 cursor-pointer"
       >
         Hi, I&apos;m{" "}
-        <Highlight className="text-black dark:text-white">Manik</Highlight>
+        <Highlight className="text-white">Manik</Highlight>
         <div className="mt-6">
-          <p className="text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer">
+          <p className="text-gray-300 text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer">
             Full Stack Developer & Data Scientist
           </p>
-          <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer w-full overflow-hidden">
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed hover:text-white hover:scale-105 transition-all duration-300 cursor-pointer w-full overflow-hidden">
             I create beautiful, functional web applications with modern technologies.
             I love to play along with data and covert them into meaningful ML models.
             <br />Passionate about clean code, user experience, and bringing ideas to life.
@@ -34,7 +34,7 @@ export function HeroHighlightDemo() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 mt-4 sm:mt-6 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center items-center">
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ export function HeroHighlightDemo() {
                 const projectsSection = document.getElementById('projects');
                 projectsSection?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="group relative px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium text-xs sm:text-sm rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
+              className="group relative px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium text-sm rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,7 +62,7 @@ export function HeroHighlightDemo() {
                 const contactSection = document.getElementById('contact');
                 contactSection?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="group relative px-4 sm:px-6 py-2 sm:py-3 bg-transparent border-2 border-white/30 text-white font-medium text-xs sm:text-sm rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:border-white hover:bg-white/10 hover:shadow-xl hover:shadow-white/20 focus:outline-none focus:ring-2 focus:ring-white/30"
+              className="group relative px-6 py-3 bg-transparent border-2 border-white/30 text-white font-medium text-sm rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:border-white hover:bg-white/10 hover:shadow-xl hover:shadow-white/20 focus:outline-none focus:ring-2 focus:ring-white/30"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
