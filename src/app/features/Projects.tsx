@@ -21,14 +21,14 @@ export default function Projects() {
         	"xterm.js",
         	"MongoDB" ],
       image: "/Vibecode.jpeg",
-      link: "https://github.com/manik3160/House-Prediction"
+      link: "https://github.com/manik3160/VibeCodeEditor"
     },
     {
       title: "Cloudinary SaaS",
       description: "Cloudinary SaaS is a platform that allows users to upload, store, and compress their  videos. It also allows users to change the ratio of images.",
       tech: ["Next.js", "React", "TypeScript", "Clerk", "Prisma", "Cloudinary", "Tailwind CSS", "DaisyUI"],
       image: "/cloud.jpeg",
-      link: "https://github.com/manik3160/House-Prediction"
+      link: "https://github.com/manik3160/Cloudinary-saas"
     },
     {
       title: "AI Reels Generator",
@@ -39,21 +39,21 @@ export default function Projects() {
          "FFmpeg"
         ],
       image: "/Vid.jpeg",
-      link: "https://github.com/manik3160/House-Prediction"
+      link: "https://github.com/manik3160/VidSnap-AI"
     },
     {
       title: "Riverflow",
       description: "A stackoverflow type platform where users can ask questions and get answers from the community.",
       tech: ["Next.js", "TypeScript", "Tailwind CSS","ShadCN UI","MongoDB"],
       image: "/Riverflow.jpeg",
-      link: "https://github.com/manik3160/House-Prediction"
+      link: "https://github.com/manik3160/Stack-Overflow"
     },
     {
       title: "AI Teaching Assistant",
       description: "RAG-based AI Learning Assistant which uses video content to answer questions.",
       tech: ["Python", "NumPy","Pandas", "OpenAI", "Whisper"],
       image: "/teach.jpeg",
-      link: "https://github.com/manik3160/House-Prediction"
+      link: "https://github.com/manik3160/Ai-TeachingAssisstant"
     },
     {
       title: "AI House Analysis",
