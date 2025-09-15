@@ -142,7 +142,9 @@ export default function Contact() {
             {/* Orbiting Social Cards */}
             {socialLinks.map((social, index) => {
               const Icon = social.icon;
-              const orbitRadius = window.innerWidth < 640 ? 150 - (index * 30) : window.innerWidth < 768 ? 200 - (index * 40) : 250 - (index * 50); // Responsive orbits
+              const orbitRadius = isClient ? 
+                (window.innerWidth < 640 ? 150 - (index * 30) : window.innerWidth < 768 ? 200 - (index * 40) : 250 - (index * 50)) : 
+                250 - (index * 50); // Responsive orbits with fallback
               const orbitSpeed = 0.3 + (index * 0.15); // Different speeds
               const angle = ((isClient ? animationTime : 0) * 0.0008 * orbitSpeed + index * Math.PI / 2) % (2 * Math.PI);
               const centerX = 0;
