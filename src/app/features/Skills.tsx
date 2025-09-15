@@ -2,8 +2,7 @@
 import { GridBackground } from "@/components/ui/grid-background";
 import { FadeIn, StaggeredFadeIn } from "@/components/ui/fade-in";
 import { motion } from "motion/react";
-import { useState, useEffect, useRef } from "react";
-import { TypingText } from "@/components/ui/typing-text";
+import { useState } from "react";
 import { 
   SiReact, 
   SiNodedotjs, 
@@ -21,29 +20,6 @@ import { FaJava } from "react-icons/fa";
 
 export default function Skills() {
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
-  const [isVisible, setIsVisible] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setIsVisible(true);
-            setHasAnimated(true);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasAnimated]);
 
   const toggleFlip = (index: number) => {
     const newFlippedCards = new Set(flippedCards);
@@ -56,25 +32,15 @@ export default function Skills() {
   };
 
   return (
-    <section id="skill" ref={sectionRef}>
+    <section id="skill">
       <GridBackground className="py-20 px-8" fadeEffect={false}>
       <div className="max-w-6xl mx-auto">
         <FadeIn direction="up">
           <h2 className="text-5xl font-bold text-center mb-12">
             <span className="text-gray-800 dark:text-white">
-              {isVisible ? (
-                <TypingText 
-                  text="$ Skills & Technologies" 
-                  speed={200}
-                  className="font-bold"
-                  coloredText={{
-                    text: "$",
-                    color: "text-blue-600 dark:text-blue-400 font-mono"
-                  }}
-                />
-              ) : (
-                <span className="text-gray-400">$ Skills & Technologies</span>
-              )}
+              <span className="font-bold">
+                <span className="text-blue-600 dark:text-blue-400 font-mono">$</span> Skills & Technologies
+              </span>
             </span>
           </h2>
         </FadeIn>
@@ -254,6 +220,13 @@ export default function Skills() {
                       
                       {/* Decorative line */}
                       <div className={`w-16 h-1 mx-auto bg-gradient-to-r ${skill.color} rounded-full hover:w-24 transition-all duration-300`}></div>
+                      
+                      {/* Click to flip text - only for React card */}
+                      {skill.name === "React" && (
+                        <p className="text-gray-500 dark:text-gray-400">
+                          Click to flip
+                        </p>
+                      )}
                     </div>
                     
                     {/* Corner decoration */}

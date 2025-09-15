@@ -1,70 +1,70 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { GridBackground } from "@/components/ui/grid-background";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
-import { TypingText } from "@/components/ui/typing-text";
 
 export default function Projects() {
   const [currentCard, setCurrentCard] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setIsVisible(true);
-            setHasAnimated(true);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasAnimated]);
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, product management, shopping cart, and payment integration.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "🛒",
-      link: "#"
+      title: "AI Code Editor",
+      description: "Vibecode Editor is a web-based fullstack IDE built with Next.js and Monaco Editor. It enables real-time code execution via WebContainers, AI-driven coding help using local Ollama models, supports multiple stack templates, and includes a terminal with a smooth developer-first interface.",
+      tech: ["Next.js",
+       	"TailwindCSS", "ShadCN UI",
+        	"TypeScript",
+        	"NextAuth",
+        	"Monaco Editor",
+        "Ollama",
+       	"WebContainers",
+        	"xterm.js",
+        	"MongoDB" ],
+      image: "/vibecode.jpeg",
+      link: "https://github.com/manik3160/VibeCodeEditor"
     },
     {
-      title: "Data Analytics Dashboard",
-      description: "Interactive dashboard for data visualization and analysis. Real-time data processing with beautiful charts and customizable widgets.",
-      tech: ["Python", "Pandas", "Plotly", "FastAPI"],
-      image: "📊",
-      link: "#"
+      title: "Cloudinary SaaS",
+      description: "Cloudinary SaaS is a platform that allows users to upload, store, and compress their  videos. It also allows users to change the ratio of images.",
+      tech: ["Next.js", "React", "TypeScript", "Clerk", "Prisma", "Cloudinary", "Tailwind CSS", "DaisyUI"],
+      image: "/cloud.jpeg",
+      link: "https://github.com/manik3160/Cloudinary-saas"
     },
     {
-      title: "Portfolio Website",
-      description: "Modern, responsive portfolio built with Next.js and Tailwind CSS. Features smooth animations and 3D effects for an engaging user experience.",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-      image: "💼",
-      link: "#"
+      title: "AI Reels Generator",
+      description: "VidSnap-AI is an AI-powered SAAS that generates reels from plain text descriptions. It uses text-to-speech synthesis and combines it with background music and visuals to output complete reels automatically.",
+      tech: ["Flask",
+         "HTML", "Tailwind CSS", "JavaScript",
+         "ElevenLabs API",
+         "FFmpeg"
+        ],
+      image: "/Vid.jpeg",
+      link: "https://github.com/manik3160/VidSnap-AI"
     },
     {
-      title: "AI Chat Application",
-      description: "Real-time chat application with AI integration. Built with modern web technologies and features intelligent responses.",
-      tech: ["React", "Socket.io", "OpenAI", "Node.js"],
-      image: "🤖",
-      link: "#"
+      title: "Riverflow",
+      description: "A stackoverflow type platform where users can ask questions and get answers from the community.",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS","ShadCN UI","MongoDB"],
+      image: "/Riverflow.jpeg",
+      link: "https://github.com/manik3160/Stack-Overflow"
     },
     {
-      title: "Mobile Fitness Tracker",
-      description: "Cross-platform mobile app for tracking fitness activities. Includes workout plans, progress tracking, and social features.",
-      tech: ["React Native", "Firebase", "Redux", "Expo"],
-      image: "💪",
-      link: "#"
+      title: "AI Teaching Assistant",
+      description: "RAG-based AI Learning Assistant which uses video content to answer questions.",
+      tech: ["Python", "NumPy","Pandas", "OpenAI", "Whisper"],
+      image: "/teach.jpeg",
+      link: "https://github.com/manik3160/Ai-TeachingAssisstant"
+    },
+    {
+      title: "AI House Analysis",
+      description: "A machine learning pipeline using scikit-learn to predict housing prices.",
+      tech: ["Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "Joblib"
+        ],
+      image: "/House.jpeg",
+      link: "https://github.com/manik3160/House-Prediction"
     }
   ];
 
@@ -77,24 +77,14 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" ref={sectionRef}>
+    <section id="projects">
       <GridBackground className="py-20 px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-bold text-center mb-12">
             <span className="text-gray-800 dark:text-white">
-              {isVisible ? (
-                <TypingText 
-                  text="$ Featured Projects" 
-                  speed={200}
-                  className="font-bold"
-                  coloredText={{
-                    text: "$",
-                    color: "text-blue-600 dark:text-blue-400 font-mono"
-                  }}
-                />
-              ) : (
-                <span className="text-gray-400">$ Featured Projects</span>
-              )}
+              <span className="font-bold">
+                <span className="text-blue-600 dark:text-blue-400 font-mono">$</span> Featured Projects
+              </span>
             </span>
           </h2>
           
@@ -127,9 +117,13 @@ export default function Projects() {
                 <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
                   <CardItem
                     translateZ="50"
-                    className="text-4xl mb-4 text-center"
+                    className="mb-4 text-center"
                   >
-                    {projects[currentCard].image}
+                    <img
+                      src={projects[currentCard].image}
+                      alt={projects[currentCard].title}
+                      className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    />
                   </CardItem>
                   
                   <CardItem

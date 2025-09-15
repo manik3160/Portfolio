@@ -74,134 +74,58 @@ export function HeroHighlightDemo() {
             </motion.button>
           </div>
 
-          <div className="relative overflow-hidden bg-gray-900/50 rounded-lg p-2 sm:p-4 mt-6">
-            <div className="flex animate-scroll">
-              
-              <div className="flex gap-3 sm:gap-4 whitespace-nowrap">
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-blue-600/30 to-blue-500/20 text-blue-400 rounded-xl text-xs sm:text-sm font-mono border border-blue-500/50 hover:bg-gradient-to-r hover:from-blue-600/50 hover:to-blue-500/40 hover:text-white hover:shadow-xl hover:shadow-blue-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >React</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-green-600/30 to-green-500/20 text-green-400 rounded-xl text-xs sm:text-sm font-mono border border-green-500/50 hover:bg-gradient-to-r hover:from-green-600/50 hover:to-green-500/40 hover:text-white hover:shadow-xl hover:shadow-green-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Node.js</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-yellow-600/30 to-yellow-500/20 text-yellow-400 rounded-xl text-xs sm:text-sm font-mono border border-yellow-500/50 hover:bg-gradient-to-r hover:from-yellow-600/50 hover:to-yellow-500/40 hover:text-white hover:shadow-xl hover:shadow-yellow-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >JavaScript</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-purple-600/30 to-purple-500/20 text-purple-400 rounded-xl text-xs sm:text-sm font-mono border border-purple-500/50 hover:bg-gradient-to-r hover:from-purple-600/50 hover:to-purple-500/40 hover:text-white hover:shadow-xl hover:shadow-purple-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >TypeScript</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-cyan-600/30 to-cyan-500/20 text-cyan-400 rounded-xl text-xs sm:text-sm font-mono border border-cyan-500/50 hover:bg-gradient-to-r hover:from-cyan-600/50 hover:to-cyan-500/40 hover:text-white hover:shadow-xl hover:shadow-cyan-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >SQL</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-blue-500/30 to-blue-400/20 text-blue-300 rounded-xl text-xs sm:text-sm font-mono border border-blue-400/50 hover:bg-gradient-to-r hover:from-blue-500/50 hover:to-blue-400/40 hover:text-white hover:shadow-xl hover:shadow-blue-400/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >MongoDB</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-teal-600/30 to-teal-500/20 text-teal-400 rounded-xl text-xs sm:text-sm font-mono border border-teal-500/50 hover:bg-gradient-to-r hover:from-teal-600/50 hover:to-teal-500/40 hover:text-white hover:shadow-xl hover:shadow-teal-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Nextjs</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-orange-600/30 to-orange-500/20 text-orange-400 rounded-xl text-xs sm:text-sm font-mono border border-orange-500/50 hover:bg-gradient-to-r hover:from-orange-600/50 hover:to-orange-500/40 hover:text-white hover:shadow-xl hover:shadow-orange-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Express</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-yellow-500/30 to-yellow-400/20 text-yellow-300 rounded-xl text-xs sm:text-sm font-mono border border-yellow-400/50 hover:bg-gradient-to-r hover:from-yellow-500/50 hover:to-yellow-400/40 hover:text-white hover:shadow-xl hover:shadow-yellow-400/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Java</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-blue-700/30 to-blue-600/20 text-blue-300 rounded-xl text-xs sm:text-sm font-mono border border-blue-600/50 hover:bg-gradient-to-r hover:from-blue-700/50 hover:to-blue-600/40 hover:text-white hover:shadow-xl hover:shadow-blue-600/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Numpy</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-blue-800/30 to-blue-700/20 text-blue-200 rounded-xl text-xs sm:text-sm font-mono border border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-800/50 hover:to-blue-700/40 hover:text-white hover:shadow-xl hover:shadow-blue-700/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Pandas</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-purple-500/30 to-purple-400/20 text-purple-300 rounded-xl text-xs sm:text-sm font-mono border border-purple-400/50 hover:bg-gradient-to-r hover:from-purple-500/50 hover:to-purple-400/40 hover:text-white hover:shadow-xl hover:shadow-purple-400/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Scikit-learn</motion.span>
+          {/* Professional Tech Stack */}
+          <div className="mt-8">
+            <div className="text-center mb-6">
+            
               </div>
+            
+            <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+              {[
+                { name: "React", color: "hover:bg-blue-500/20 hover:border-blue-400 hover:text-blue-300" },
+                { name: "Next.js", color: "hover:bg-gray-500/20 hover:border-gray-400 hover:text-gray-300" },
+                { name: "TypeScript", color: "hover:bg-blue-600/20 hover:border-blue-500 hover:text-blue-400" },
+                { name: "JavaScript", color: "hover:bg-yellow-500/20 hover:border-yellow-400 hover:text-yellow-300" },
+                { name: "Node.js", color: "hover:bg-green-500/20 hover:border-green-400 hover:text-green-300" },
+                { name: "Express", color: "hover:bg-gray-600/20 hover:border-gray-500 hover:text-gray-400" },
+                { name: "MongoDB", color: "hover:bg-green-600/20 hover:border-green-500 hover:text-green-400" },
+                { name: "SQL", color: "hover:bg-red-500/20 hover:border-red-400 hover:text-red-300" },
+                { name: "Python", color: "hover:bg-yellow-600/20 hover:border-yellow-500 hover:text-yellow-400" },
+                { name: "NumPy", color: "hover:bg-blue-700/20 hover:border-blue-600 hover:text-blue-500" },
+                { name: "Pandas", color: "hover:bg-red-600/20 hover:border-red-500 hover:text-red-400" },
+                { name: "Scikit-learn", color: "hover:bg-orange-500/20 hover:border-orange-400 hover:text-orange-300" },
+                { name: "Java", color: "hover:bg-red-700/20 hover:border-red-600 hover:text-red-500" },
+                { name: "Tailwind CSS", color: "hover:bg-cyan-500/20 hover:border-cyan-400 hover:text-cyan-300" },
+                { name: "Git", color: "hover:bg-orange-600/20 hover:border-orange-500 hover:text-orange-400" },
+                { name: "Docker", color: "hover:bg-blue-500/20 hover:border-blue-400 hover:text-blue-300" }
+              ].map((tech, index) => (
+                <span
+                  key={index}
+                  className={`px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${tech.color}`}
+                >
+                  {tech.name}
+                </span>
+              ))}
               
-              <div className="flex gap-3 sm:gap-4 whitespace-nowrap">
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-blue-600/30 to-blue-500/20 text-blue-400 rounded-xl text-xs sm:text-sm font-mono border border-blue-500/50 hover:bg-gradient-to-r hover:from-blue-600/50 hover:to-blue-500/40 hover:text-white hover:shadow-xl hover:shadow-blue-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >React</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-green-600/30 to-green-500/20 text-green-400 rounded-xl text-xs sm:text-sm font-mono border border-green-500/50 hover:bg-gradient-to-r hover:from-green-600/50 hover:to-green-500/40 hover:text-white hover:shadow-xl hover:shadow-green-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Node.js</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-yellow-600/30 to-yellow-500/20 text-yellow-400 rounded-xl text-xs sm:text-sm font-mono border border-yellow-500/50 hover:bg-gradient-to-r hover:from-yellow-600/50 hover:to-yellow-500/40 hover:text-white hover:shadow-xl hover:shadow-yellow-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >JavaScript</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-purple-600/30 to-purple-500/20 text-purple-400 rounded-xl text-xs sm:text-sm font-mono border border-purple-500/50 hover:bg-gradient-to-r hover:from-purple-600/50 hover:to-purple-500/40 hover:text-white hover:shadow-xl hover:shadow-purple-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >TypeScript</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-cyan-600/30 to-cyan-500/20 text-cyan-400 rounded-xl text-xs sm:text-sm font-mono border border-cyan-500/50 hover:bg-gradient-to-r hover:from-cyan-600/50 hover:to-cyan-500/40 hover:text-white hover:shadow-xl hover:shadow-cyan-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >SQL</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-blue-500/30 to-blue-400/20 text-blue-300 rounded-xl text-xs sm:text-sm font-mono border border-blue-400/50 hover:bg-gradient-to-r hover:from-blue-500/50 hover:to-blue-400/40 hover:text-white hover:shadow-xl hover:shadow-blue-400/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >MongoDB</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-teal-600/30 to-teal-500/20 text-teal-400 rounded-xl text-xs sm:text-sm font-mono border border-teal-500/50 hover:bg-gradient-to-r hover:from-teal-600/50 hover:to-teal-500/40 hover:text-white hover:shadow-xl hover:shadow-teal-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Nextjs</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-orange-600/30 to-orange-500/20 text-orange-400 rounded-xl text-xs sm:text-sm font-mono border border-orange-500/50 hover:bg-gradient-to-r hover:from-orange-600/50 hover:to-orange-500/40 hover:text-white hover:shadow-xl hover:shadow-orange-500/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Express</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-yellow-500/30 to-yellow-400/20 text-yellow-300 rounded-xl text-xs sm:text-sm font-mono border border-yellow-400/50 hover:bg-gradient-to-r hover:from-yellow-500/50 hover:to-yellow-400/40 hover:text-white hover:shadow-xl hover:shadow-yellow-400/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Java</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-blue-700/30 to-blue-600/20 text-blue-300 rounded-xl text-xs sm:text-sm font-mono border border-blue-600/50 hover:bg-gradient-to-r hover:from-blue-700/50 hover:to-blue-600/40 hover:text-white hover:shadow-xl hover:shadow-blue-600/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Numpy</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-blue-800/30 to-blue-700/20 text-blue-200 rounded-xl text-xs sm:text-sm font-mono border border-blue-700/50 hover:bg-gradient-to-r hover:from-blue-800/50 hover:to-blue-700/40 hover:text-white hover:shadow-xl hover:shadow-blue-700/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Pandas</motion.span>
-                <motion.span 
-                  className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-purple-500/30 to-purple-400/20 text-purple-300 rounded-xl text-xs sm:text-sm font-mono border border-purple-400/50 hover:bg-gradient-to-r hover:from-purple-500/50 hover:to-purple-400/40 hover:text-white hover:shadow-xl hover:shadow-purple-400/60 transition-all duration-300 cursor-pointer backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >Scikit-learn</motion.span>
-              </div>
+              {/* See More Button */}
+              <button
+                onClick={() => {
+                  const skillsSection = document.getElementById('skill');
+                  skillsSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-6 py-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-400/30 text-white rounded-full text-sm font-semibold hover:from-blue-600/30 hover:to-purple-600/30 hover:border-blue-400/50 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 cursor-pointer flex items-center gap-2 group relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative z-10">See More</span>
+                <svg 
+                  className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 relative z-10" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
           </div>
          

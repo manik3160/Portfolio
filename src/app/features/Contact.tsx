@@ -2,7 +2,6 @@
 import { useState, useEffect, useRef } from "react";
 import { GridBackground } from "@/components/ui/grid-background";
 import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope } from 'react-icons/fa6';
-import { TypingText } from "@/components/ui/typing-text";
 
 export default function Contact() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -10,30 +9,7 @@ export default function Contact() {
   const [animationTime, setAnimationTime] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [isClient, setIsClient] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setIsVisible(true);
-            setHasAnimated(true);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasAnimated]);
 
   useEffect(() => {
     setIsClient(true);
@@ -119,7 +95,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" ref={sectionRef} className="relative overflow-hidden">
+    <section id="contact" className="relative overflow-hidden">
       {/* Animated Background Particles */}
       <div className="absolute inset-0 pointer-events-none">
         {isClient && particles.map(particle => (
@@ -139,19 +115,9 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <h2 className="text-5xl font-bold mb-8">
             <span className="text-gray-800 dark:text-white">
-              {isVisible ? (
-                <TypingText 
-                  text="$ Let's Connect" 
-                  speed={200}
-                  className="font-bold"
-                  coloredText={{
-                    text: "$",
-                    color: "text-blue-600 dark:text-blue-400 font-mono"
-                  }}
-                />
-              ) : (
-                <span className="text-gray-400">$ Let's Connect</span>
-              )}
+              <span className="font-bold">
+                <span className="text-blue-600 dark:text-blue-400 font-mono">$</span> Let's Connect
+              </span>
             </span>
           </h2>
 
