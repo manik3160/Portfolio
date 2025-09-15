@@ -1,6 +1,12 @@
 "use client";
+import { useState, useEffect } from "react";
 
 export function CodingAnimation() {
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const [currentCharIndex, setCurrentCharIndex] = useState(0);
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+
   const codeLines = [
     "const developer = {",
     "  name: 'Manik',",
@@ -11,7 +17,27 @@ export function CodingAnimation() {
     "console.log(`Hello, I'm ${developer.name}!`);",
   ];
 
-  const displayedText = codeLines.join('\n');
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (currentLineIndex < codeLines.length) {
+        const currentLine = codeLines[currentLineIndex];
+        
+        if (currentCharIndex < currentLine.length) {
+          setDisplayedText(prev => prev + currentLine[currentCharIndex]);
+          setCurrentCharIndex(prev => prev + 1);
+        } else {
+          setDisplayedText(prev => prev + '\n');
+          setCurrentLineIndex(prev => prev + 1);
+          setCurrentCharIndex(0);
+        }
+      } else {
+        clearInterval(timer);
+        setIsTypingComplete(true);
+      }
+    }, 20);
+
+    return () => clearInterval(timer);
+  }, [currentLineIndex, currentCharIndex, codeLines]);
 
   return (
     <div className="relative w-full max-w-2xl">
@@ -43,6 +69,7 @@ export function CodingAnimation() {
           <div className="font-mono text-sm relative">
             <pre className="text-green-400 whitespace-pre-wrap leading-relaxed">
               {displayedText}
+              {!isTypingComplete && <span className="animate-pulse">|</span>}
             </pre>
             
             {/* Highlight your name */}
@@ -51,20 +78,22 @@ export function CodingAnimation() {
             </div>
           </div>
 
-          {/* Status Message */}
-          <div className="mt-6 p-4 bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-500/40 rounded-lg backdrop-blur-sm">
-            <div className="flex items-center space-x-2 mb-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full" />
-              <span className="text-green-400 text-sm font-mono">
-                ✓ Code executed successfully!
-              </span>
+          {/* Status Message - Only show after typing is complete */}
+          {isTypingComplete && (
+            <div className="mt-6 p-4 bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-500/40 rounded-lg backdrop-blur-sm animate-fade-in">
+              <div className="flex items-center space-x-2 mb-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full" />
+                <span className="text-green-400 text-sm font-mono">
+                  ✓ Code executed successfully!
+                </span>
+              </div>
+              <p className="text-gray-300 text-sm">
+                Hello, I&apos;m <span className="text-blue-400 font-bold text-base">Manik</span>! 
+                <br />
+                Ready to build amazing things together.
+              </p>
             </div>
-            <p className="text-gray-300 text-sm">
-              Hello, I'm <span className="text-blue-400 font-bold text-base">Manik</span>! 
-              <br />
-              Ready to build amazing things together.
-            </p>
-          </div>
+          )}
         </div>
       </div>
     </div>

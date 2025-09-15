@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 export const useSmoothScroll = () => {
   useEffect(() => {
-    // Add smooth scroll behavior to all anchor links
+    
     const handleClick = (e: Event) => {
       const target = e.target as HTMLAnchorElement;
       if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
@@ -12,7 +12,7 @@ export const useSmoothScroll = () => {
         const targetElement = document.getElementById(targetId || '');
         
         if (targetElement) {
-          const offsetTop = targetElement.offsetTop - 80; // Account for navbar height
+          const offsetTop = targetElement.offsetTop - 80; 
           window.scrollTo({
             top: offsetTop,
             behavior: 'smooth'
@@ -25,8 +25,6 @@ export const useSmoothScroll = () => {
     return () => document.removeEventListener('click', handleClick);
   }, []);
 };
-
-// Component to initialize smooth scrolling
 export const SmoothScrollProvider = ({ children }: { children: React.ReactNode }) => {
   useSmoothScroll();
   return <>{children}</>;

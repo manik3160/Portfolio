@@ -37,7 +37,7 @@ export function NavbarDemo() {
   return (
     <div className="relative w-full">
       <Navbar>
-        {/* Desktop Navigation */}
+        {}
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
@@ -56,7 +56,7 @@ export function NavbarDemo() {
           </div>
         </NavBody>
 
-        {/* Mobile Navigation */}
+        {}
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
@@ -99,9 +99,7 @@ export function NavbarDemo() {
         </MobileNav>
       </Navbar>
 
-      {/* Navbar */}
+      {}
     </div>
   );
 }
-
-

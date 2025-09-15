@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
                     viewport={{ once: true }}
                     className="space-y-8"
                 >
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
                         className="flex items-center justify-center gap-3 text-gray-300"
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
+                        transition={{ delay: 0.1, duration: 0.3 }}
                         viewport={{ once: true }}
                     >
                         <span className="text-base font-medium">Made with</span>
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                                 color: ['#ef4444', '#dc2626', '#b91c1c', '#ef4444']
                             }}
                             transition={{ 
-                                duration: 2, 
+                                duration: 1, 
                                 repeat: Infinity, 
                                 ease: "easeInOut" 
                             }}
@@ -49,14 +49,14 @@ const Footer: React.FC = () => {
                             <motion.div
                                 className="absolute inset-0 bg-red-500/20 rounded-full blur-sm"
                                 animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.6, 0.3] }}
-                                transition={{ duration: 2, repeat: Infinity }}
+                                transition={{ duration: 1, repeat: Infinity }}
                             />
                         </motion.div>
                         <span className="text-base font-medium">by</span>
                         <motion.span 
                             className={`text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent ${spaceMono.className}`}
                             whileHover={{ scale: 1.05 }}
-                            transition={{ type: "spring", stiffness: 300 }}
+                            transition={{ type: "spring", stiffness: 500, damping: 20 }}
                         >
                             Manik
                         </motion.span>
@@ -66,14 +66,14 @@ const Footer: React.FC = () => {
                         className="flex flex-col items-center gap-6"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
+                        transition={{ delay: 0.2, duration: 0.3 }}
                         viewport={{ once: true }}
                     >
                         <motion.p 
                             className="text-gray-400 text-lg font-medium"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
-                            transition={{ delay: 0.6, duration: 0.5 }}
+                            transition={{ delay: 0.3, duration: 0.3 }}
                             viewport={{ once: true }}
                         >
                             Follow me on
@@ -88,13 +88,13 @@ const Footer: React.FC = () => {
                                 whileTap={{ scale: 0.95 }}
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.8, duration: 0.5 }}
+                                transition={{ delay: 0.4, duration: 0.3 }}
                                 viewport={{ once: true }}
                             >
                                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 <motion.div
                                     animate={{ rotate: [0, 5, -5, 0] }}
-                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                    transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
                                 >
                                     <FaLinkedin size={22} className="relative z-10" />
                                 </motion.div>
@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
                                 <motion.div
                                     className="absolute right-2 w-2 h-2 bg-cyan-400 rounded-full"
                                     animate={{ scale: [0, 1, 0], opacity: [0, 1, 0] }}
-                                    transition={{ duration: 1.5, repeat: Infinity, delay: 1 }}
+                                    transition={{ duration: 0.8, repeat: Infinity, delay: 0.5 }}
                                 />
                             </motion.a>
                             <motion.a
@@ -116,13 +116,13 @@ const Footer: React.FC = () => {
                                 whileTap={{ scale: 0.95 }}
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 1.0, duration: 0.5 }}
+                                transition={{ delay: 0.5, duration: 0.3 }}
                                 viewport={{ once: true }}
                             >
                                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 <motion.div
                                     animate={{ rotate: [0, -5, 5, 0] }}
-                                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                                    transition={{ duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
                                 >
                                     <FaXTwitter size={22} className="relative z-10" />
                                 </motion.div>
@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
                                 <motion.div
                                     className="absolute right-2 w-2 h-2 bg-cyan-400 rounded-full"
                                     animate={{ scale: [0, 1, 0], opacity: [0, 1, 0] }}
-                                    transition={{ duration: 1.5, repeat: Infinity, delay: 1.2 }}
+                                    transition={{ duration: 0.8, repeat: Infinity, delay: 0.6 }}
                                 />
                             </motion.a>
                         </div>
@@ -142,7 +142,7 @@ const Footer: React.FC = () => {
                         className="pt-8 border-t border-gradient-to-r from-transparent via-cyan-500/20 to-transparent"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        transition={{ delay: 1.2, duration: 0.6 }}
+                        transition={{ delay: 0.6, duration: 0.3 }}
                         viewport={{ once: true }}
                     >
                         <div className="relative">
@@ -150,7 +150,7 @@ const Footer: React.FC = () => {
                             <motion.p 
                                 className="text-gray-500 text-sm font-medium relative z-10"
                                 animate={{ opacity: [0.7, 1, 0.7] }}
-                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                             >
                                 © 2025 Manik. All rights reserved.
                             </motion.p>

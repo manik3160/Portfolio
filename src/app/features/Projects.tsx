@@ -20,14 +20,14 @@ export default function Projects() {
         	"xterm.js",
         	"MongoDB" ],
       image: "/vibecode.jpeg",
-      link: "https://github.com/manik3160/VibeCodeEditor"
+      link: "https://github.com/manik3160/House-Prediction"
     },
     {
       title: "Cloudinary SaaS",
       description: "Cloudinary SaaS is a platform that allows users to upload, store, and compress their  videos. It also allows users to change the ratio of images.",
       tech: ["Next.js", "React", "TypeScript", "Clerk", "Prisma", "Cloudinary", "Tailwind CSS", "DaisyUI"],
       image: "/cloud.jpeg",
-      link: "https://github.com/manik3160/Cloudinary-saas"
+      link: "https://github.com/manik3160/House-Prediction"
     },
     {
       title: "AI Reels Generator",
@@ -38,21 +38,21 @@ export default function Projects() {
          "FFmpeg"
         ],
       image: "/Vid.jpeg",
-      link: "https://github.com/manik3160/VidSnap-AI"
+      link: "https://github.com/manik3160/House-Prediction"
     },
     {
       title: "Riverflow",
       description: "A stackoverflow type platform where users can ask questions and get answers from the community.",
       tech: ["Next.js", "TypeScript", "Tailwind CSS","ShadCN UI","MongoDB"],
       image: "/Riverflow.jpeg",
-      link: "https://github.com/manik3160/Stack-Overflow"
+      link: "https://github.com/manik3160/House-Prediction"
     },
     {
       title: "AI Teaching Assistant",
       description: "RAG-based AI Learning Assistant which uses video content to answer questions.",
       tech: ["Python", "NumPy","Pandas", "OpenAI", "Whisper"],
       image: "/teach.jpeg",
-      link: "https://github.com/manik3160/Ai-TeachingAssisstant"
+      link: "https://github.com/manik3160/House-Prediction"
     },
     {
       title: "AI House Analysis",
@@ -88,9 +88,9 @@ export default function Projects() {
             </span>
           </h2>
           
-          {/* Carousel Container */}
+          {}
           <div className="relative flex items-center justify-center">
-            {/* Left Arrow */}
+            {}
             <button
               onClick={prevCard}
               className="absolute left-4 z-10 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
@@ -111,7 +111,7 @@ export default function Projects() {
               </svg>
             </button>
 
-            {/* Card Display */}
+            {}
             <div className="w-full max-w-md mx-4">
               <CardContainer className="inter-var">
                 <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
@@ -169,7 +169,7 @@ export default function Projects() {
               </CardContainer>
             </div>
 
-            {/* Right Arrow */}
+            {}
             <button
               onClick={nextCard}
               className="absolute right-4 z-10 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
@@ -191,7 +191,7 @@ export default function Projects() {
             </button>
           </div>
 
-          {/* Card Indicators */}
+          {}
           <div className="flex justify-center mt-8 space-x-2">
             {projects.map((_, index) => (
               <button

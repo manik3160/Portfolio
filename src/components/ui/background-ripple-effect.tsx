@@ -1,6 +1,6 @@
 "use client";
 import React, { useMemo, useRef, useState } from "react";
-import { cn } from "@/lib/utils.ts";
+import { cn } from "@/lib/utils";
 
 export const BackgroundRippleEffect = ({
   rows = 8,
@@ -53,7 +53,7 @@ type DivGridProps = {
   className?: string;
   rows: number;
   cols: number;
-  cellSize: number; // in pixels
+  cellSize: number; 
   borderColor: string;
   fillColor: string;
   clickedCell: { row: number; col: number } | null;
@@ -99,8 +99,8 @@ const DivGrid = ({
         const distance = clickedCell
           ? Math.hypot(clickedCell.row - rowIdx, clickedCell.col - colIdx)
           : 0;
-        const delay = clickedCell ? Math.max(0, distance * 55) : 0; // ms
-        const duration = 200 + distance * 80; // ms
+        const delay = clickedCell ? Math.max(0, distance * 55) : 0; 
+        const duration = 200 + distance * 80; 
 
         const style: CellStyle = clickedCell
           ? {

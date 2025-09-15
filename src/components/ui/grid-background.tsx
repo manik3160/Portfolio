@@ -28,7 +28,7 @@ export function GridBackground({
         )}
         style={gridStyle}
       />
-      {/* Radial gradient for the container to give a faded look */}
+      
       {fadeEffect && (
         <div className="pointer-events-none absolute inset-0 -z-5 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
       )}
@@ -38,8 +38,6 @@ export function GridBackground({
     </div>
   );
 }
-
-// Keep the original demo component for reference
 export function GridBackgroundDemo() {
   return (
     <GridBackground className="flex h-[50rem] w-full items-center justify-center">

@@ -1,6 +1,6 @@
 "use client";
 import { GridBackground } from "@/components/ui/grid-background";
-import { FadeIn, StaggeredFadeIn } from "@/components/ui/fade-in";
+import { FadeIn } from "@/components/ui/fade-in";
 import { motion } from "motion/react";
 import { useState } from "react";
 import { 

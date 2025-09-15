@@ -63,8 +63,6 @@ export const FadeIn = ({
     </div>
   );
 };
-
-// Staggered fade-in for multiple children
 export const StaggeredFadeIn = ({ 
   children, 
   staggerDelay = 100,

@@ -23,8 +23,6 @@ export const LoadingSpinner = ({ size = "md", className }: LoadingSpinnerProps) 
     />
   );
 };
-
-// Loading overlay component
 export const LoadingOverlay = ({ isLoading, children }: { isLoading: boolean; children: React.ReactNode }) => {
   if (!isLoading) return <>{children}</>;
 
