@@ -42,13 +42,10 @@ export function NavbarDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4 relative z-50">
-            <NavbarButton 
+            <NavbarButton
               variant="primary"
               onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/CV.pdf';
-                link.download = 'Manik_CV.pdf';
-                link.click();
+                window.open('https://drive.google.com/file/d/17WkpPONJu8pXoh7d3-o6qX9-lzaaAZ_7/view?usp=sharing', '_blank', 'noopener,noreferrer');
               }}
             >
               Download CV
@@ -83,10 +80,7 @@ export function NavbarDemo() {
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
                 onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/CV.pdf';
-                  link.download = 'Manik_CV.pdf';
-                  link.click();
+                  window.open('https://drive.google.com/file/d/17WkpPONJu8pXoh7d3-o6qX9-lzaaAZ_7/view?usp=sharing', '_blank', 'noopener,noreferrer');
                   setIsMobileMenuOpen(false);
                 }}
                 variant="primary"
