@@ -80,7 +80,7 @@ export function NavbarDemo() {
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
                 onClick={() => {
-                  window.open('https://drive.google.com/file/d/17WkpPONJu8pXoh7d3-o6qX9-lzaaAZ_7/view?usp=sharing', '_blank', 'noopener,noreferrer');
+                  window.open('https://drive.google.com/file/d/1o0xG18U9PpTD7-j9Q6k7GEv8aVvUPgxy/view?usp=sharing', '_blank', 'noopener,noreferrer');
                   setIsMobileMenuOpen(false);
                 }}
                 variant="primary"
