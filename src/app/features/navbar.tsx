@@ -45,7 +45,7 @@ export function NavbarDemo() {
             <NavbarButton
               variant="primary"
               onClick={() => {
-                window.open('https://drive.google.com/file/d/18VpGX0WNHlYGcckDOQ42bMDj-QZPdUPk/view?usp=sharing', '_blank', 'noopener,noreferrer');
+                window.open('https://drive.google.com/file/d/1Moew7duIJ2Bx2f8JEOMbJER6cvdb7BLq/view?usp=sharing', '_blank', 'noopener,noreferrer');
               }}
             >
               Download CV
